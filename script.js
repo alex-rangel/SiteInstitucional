@@ -108,20 +108,12 @@ function initSmoothScroll() {
   });
 }
 
-/** Menu principal: mobile e link ativo */
+/** Menu principal mobile */
 function initSiteHeader() {
   const header = document.querySelector('.site-header');
   const toggle = document.querySelector('.site-header__toggle');
-  const navLinks = document.querySelectorAll('[data-nav-link]');
 
   if (!header) return;
-
-  const sections = [
-    { id: 'inicio', el: document.getElementById('inicio') },
-    { id: 'servicos', el: document.getElementById('servicos') },
-    { id: 'sobre', el: document.getElementById('sobre') },
-    { id: 'footer', el: document.getElementById('footer') },
-  ].filter((s) => s.el);
 
   if (toggle) {
     toggle.addEventListener('click', () => {
@@ -130,31 +122,6 @@ function initSiteHeader() {
       toggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
     });
   }
-
-  navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      navLinks.forEach((l) => l.classList.remove('is-active'));
-      link.classList.add('is-active');
-      closeMobileMenu();
-    });
-  });
-
-  function setActiveNav() {
-    const scrollPos = window.scrollY + HEADER_OFFSET + 20;
-    let current = sections[0]?.id ?? 'inicio';
-
-    sections.forEach(({ id, el }) => {
-      if (el.offsetTop <= scrollPos) current = id;
-    });
-
-    navLinks.forEach((link) => {
-      const href = link.getAttribute('href');
-      link.classList.toggle('is-active', href === `#${current}`);
-    });
-  }
-
-  window.addEventListener('scroll', setActiveNav, { passive: true });
-  setActiveNav();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
