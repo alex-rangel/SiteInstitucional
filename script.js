@@ -2,9 +2,9 @@
  * AC Rangel - Landing Page
  * Configure o número do WhatsApp abaixo (formato: 5519999999999)
  */
-const WHATSAPP_NUMBER = '5521964050746';
+const WHATSAPP_NUMBER = '5521964050946';
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  'Olá! Gostaria de solicitar um orçamento para serviços elétricos.'
+  'Olá! Gostaria de solicitar um orçamento para um  serviço.'
 );
 
 const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`;
