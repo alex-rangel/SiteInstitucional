@@ -227,7 +227,7 @@ ul {
 .logo--header {
   flex-shrink: 0;
   color: var(--navy);
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0;
 }
 
@@ -428,6 +428,10 @@ ul {
 @media (max-width: 960px) {
   .site-header__inner {
     flex-wrap: wrap;
+    align-content: center;
+    min-height: 72px;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .site-header__toggle {
@@ -450,6 +454,12 @@ ul {
   .logo--header {
     order: 1;
     flex: 1;
+    justify-content: flex-start;
+  }
+
+  .logo--header .logo__icon {
+    width: 72px;
+    height: 72px;
   }
 
   .site-nav {
