@@ -440,15 +440,7 @@ ul {
   }
 
   .btn--header-whatsapp {
-    order: 2;
-    padding: 10px 14px;
-    font-size: 0;
-    gap: 0;
-  }
-
-  .btn--header-whatsapp svg {
-    width: 22px;
-    height: 22px;
+    display: none;
   }
 
   .logo--header {
@@ -752,11 +744,22 @@ ul {
   color: var(--white);
 }
 
+.hero__title-line--nowrap {
+  white-space: nowrap;
+}
+
 .hero__title-line--accent {
-  display: inline;
+  display: block;
   font-weight: 300;
   color: var(--orange);
   text-shadow: 0 0 24px rgba(255, 122, 26, 0.38);
+}
+
+.hero__title-line--accent p {
+  display: inline-block;
+  margin: 0;
+  font-size: 0.86em;
+  white-space: nowrap;
 }
 
 .hero__subtitle {
@@ -2434,6 +2437,7 @@ ul {
 
   .hero__title {
     margin-top: 24px;
+    font-size: clamp(1.6rem, 5.2vw, 2.6rem);
   }
 
   .hero__features {
@@ -2617,7 +2621,7 @@ ul {
   }
 
   .hero__title {
-    font-size: 1.85rem;
+    font-size: clamp(1rem, 5.15vw, 1.85rem);
   }
 
   .hero__subtitle {
